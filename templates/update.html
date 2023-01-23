@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Update a New Recipe
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-5 text-center">Update a current recipe below</h1>
+    <form action="/update" method="post">
+        <div class="mb-3">
+          {% for recipe in recipes %}
+          <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="text" id="recipename" name="recipename" value="{{ recipe.name }}">
+          <small class="form-text text-muted">Update the recipe for {{ recipe.name }}</small>
+        </div>
+        <div class="mb-3">
+          <input autocomplete="off" class="form-control mx-auto w-auto" type="text" id="name" name="name" placeholder="Recipe name">
+          <small class="form-text text-muted">Re-enter the name of your recipe.</small>
+        </div>
+        <div class="mb-3">
+          <input autocomplete="off" class="form-control mx-auto w-auto" type="text" id="time" name="time" value="{{ recipe.time }}">
+          <small class="form-text text-muted">Edit how long this recipe takes if needed.</small>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="meat" name="type" value="meat">
+          <label class="form-check-label text-muted" for="meat">Contains Meat</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="vegetarian" name="type" value="vegetarian">
+          <label class="form-check-label text-muted" for="vegetarian">Vegetarian</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="vegan" name="type" value="vegan">
+          <label class="form-check-label text-muted" for="vegan">Vegan</label>
+        </div>
+        <div>
+        <small class="form-text text-muted">Please reselect the type of meal this is.</small>
+        </div>
+        <div class="center" style="margin-top: 25px;">
+          <textarea class="form-control" id="ingredients" name="ingredients" rows="5">{{ recipe.ingredients }}</textarea>
+          <small class="form-text text-muted">Edit the ingredients for your meal here if needed.</small>
+        </div>
+        <div class="center" style="margin-top: 25px;">
+          <textarea class="form-control" id="howto" name="howto" rows="8">{{ recipe.howto }}</textarea>
+          <small class="form-text text-muted">Edit the short consice How To on creating your recipe if needed.</small>
+          {% endfor %}
+        </div>
+        <button class="btn btn-primary" type="submit" style="margin-top: 50px;">Update Recipe</button>
+    </form>
+{% endblock %}

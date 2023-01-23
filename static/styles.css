@@ -1,0 +1,44 @@
+.links {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 50px;
+}
+
+footer {
+    margin-top: 100px;
+}
+
+#cookingpot {
+    margin-top: 50px;
+}
+
+#potlink {
+    font-size: 12px;
+    margin-bottom: 50px;
+}
+
+.display-5 {
+    margin-bottom: 50px;
+}
+
+.center {
+    margin: auto;
+    width: 75%;
+}
+
+.slides {
+    margin: auto;
+    width: 80%
+}
+
+#like {
+    margin-top: 25px;
+}
+
+.carousel-control-prev{
+    margin-top: -100px;
+}
+
+.carousel-control-next{
+    margin-top: -100px;
+}

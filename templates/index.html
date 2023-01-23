@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-3 text-center">Welcome to the Community Cooking Pot!</h1>
+    <div class="source w-50 p-3 center">
+        <!--A welcome image of a large cooking pot-->
+        <img src="static/cooking_pot.jpg" style="width: 400px; height: 400px;" alt="Cooking Pot" id="cookingpot">
+        <p id="potlink">
+        <a href="https://www.freepik.com/free-vector/soup-pot-is-boiling-gas-stove_20719458.htm#query=cooking%20pot&position=26&from_view=search&track=sph">Image by brgfx</a> on Freepik
+        </p>
+    </div>
+        <!--Main contents of page that includes intro text and three navigatable images-->
+        <div class="center">
+        <h1 class="display-6"> Welcome! </h1>
+        <p id="maintext">
+            The Community Cookbook is a place for people to share their favorite recipes with each other.
+            No more long sluggish searching through websites or apps.
+            The Community Cookbook keeps it short and sweet, just what you need after a long busy day.
+            Check out the current recipes by logging in or registering as a new user.
+        </p>
+    </div>
+{% endblock %}

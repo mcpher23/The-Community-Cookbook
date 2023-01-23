@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <title>Community Cookbook{% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+
+        <nav class="bg-light border navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img src="static/pot.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    The Community Cookbook</a>
+                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    {% if session["user_id"] %}
+                        <ul class="navbar-nav me-auto mt-2">
+                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/recipes">Recipes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/add">Add Recipe</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/updateselect">Update Recipe</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/account">My Recipes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/favorites">Favorites</a></li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="nav-link" href="/password">Change Password</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                        </ul>
+                    {% else %}
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary mb-0 text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container-fluid py-5 text-center">
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer class="mb-5 small text-center text-muted">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <img src="static/kitchenware1.png" class="img-fluid" width="30" height="24" alt="Kitchenware Icon">
+                    </div>
+                    <div class="col">
+                        <img src="static/kitchenware2.png" class="img-fluid" width="30" height="24" alt="Kitchenware Icon">
+                    </div>
+                    <div class="col">
+                        <p class="endtext">
+                        Thank you for visiting the Community Cookbook
+                        </p>
+                    </div>
+                    <div class="col">
+                        <img src="static/kitchenware3.png" class="img-fluid" width="30" height="24" alt="Kitchenware Icon">
+                    </div>
+                    <div class="col">
+                        <img src="static/kitchenware4.png" class="img-fluid" width="30" height="24" alt="Kitchenware Icon">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="links">
+            <a href="https://www.flaticon.com/free-icons/pot" title="pot icons">Pot icons created by smalllikeart - Flaticon, </a>
+            <a href="https://www.flaticon.com/free-icons/cooking" title="cooking icons">Cooking icons created by Smashicons - Flaticon, </a>
+            <a href="https://www.flaticon.com/free-icons/kitchenware" title="kitchenware icons">Kitchenware icons created by pmicon - Flaticon, </a>
+            <a href="https://www.flaticon.com/free-icons/kitchenware" title="kitchenware icons">Kitchenware icons created by Freepik - Flaticon, </a>
+            <a href="https://www.flaticon.com/free-icons/kitchenware" title="kitchenware icons">Kitchenware icons created by small.smiles - Flaticon</a>
+        </div>
+
+
+    </body>
+
+</html>

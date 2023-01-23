@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add a New Recipe
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-5 text-center">Add a new recipe below</h1>
+    <form method="post">
+        <div class="mb-3">
+          <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="text" id="recipename" name="name" placeholder="Recipe Name">
+          <small class="form-text text-muted">Enter the name of your recipe.</small>
+        </div>
+        <div class="mb-3">
+          <input autocomplete="off" class="form-control mx-auto w-auto" type="text" id="time" name="time" placeholder="Total Time">
+          <small class="form-text text-muted">Enter how long this recipe takes in minutes.</small>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="meat" name="type" value="Meat">
+          <label class="form-check-label text-muted" for="meat">Contains Meat</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="vegetarian" name="type" value="Vegetarian">
+          <label class="form-check-label text-muted" for="vegetarian">Vegetarian</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="vegan" name="type" value="Vegan">
+          <label class="form-check-label text-muted" for="vegan">Vegan</label>
+        </div>
+        <div>
+        <small class="form-text text-muted">Select what type your meal falls into.</small>
+        </div>
+        <div class="center" style="margin-top: 25px;">
+          <textarea class="form-control" id="ingredients" name="ingredients" rows="5" placeholder="For example. 200g Potatoes, 150g mushrooms, 2 onions, etc."></textarea>
+          <small class="form-text text-muted">Enter the ingredients for your meal here.</small>
+        </div>
+        <div class="center" style="margin-top: 25px;">
+          <textarea class="form-control" id="howto" name="howto" rows="8" placeholder="For example. Boil potatoes for 18 minutes. Fry onions for 3 minutes then add mushrooms"></textarea>
+          <small class="form-text text-muted">Give a short consice How To on creating your recipe.</small>
+        </div>
+        <button class="btn btn-primary" type="submit" style="margin-top: 50px;">Add Recipe</button>
+      </form>
+{% endblock %}
